@@ -1,0 +1,146 @@
+.container {
+    display: grid;
+    height: 90vh;
+    width: 100vw;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 20% 1fr 25%;
+    font-size: 1vw;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    grid-template-areas:
+    "header header header header"
+    "contant contant contant aside"
+    "footer footer footer footer";
+}
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(168, 166, 166, 0.452);
+    grid-area: header;
+}
+.contant{
+    display: grid;
+    text-align: center;
+    background-color: rgb(248, 248, 180);
+    padding-top: 5%;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 50% 25% 25%;
+    font-size: 1vw;
+    grid-template-areas: 
+    "contant_box contant_box"
+    "box1 box2"
+    "box3 box3";
+}
+.contant_box {
+    height: 80%;
+    grid-area: contant_box;
+    display: flex;
+    justify-content: center;
+}
+.box1{
+    grid-area: box1;
+}
+.box2{
+    grid-area: box2;
+}
+.box3{
+    grid-area: box3;
+}
+.box1,
+.box2,
+.box3{
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    justify-content: center;
+    background-color: rgba(255, 204, 93, 0.767);
+} 
+.aside{
+    display: flex;
+    justify-content: center;
+    background-color: #90da8593;
+    padding-top: 5%;
+}
+.footer{
+    background-color: rgba(168, 166, 166, 0.452);
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+.footer-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(243, 242, 196, 0.904);
+    width: 20%;
+    height: 40%;
+} 
+/* Responsive version , heid footer */
+ @media screen and (max-width:1024px){
+    .footer{
+        display: none;
+    }
+} 
+
+/* Phone, Adaptive design*/
+@media screen and (max-width:500px) {
+    .container{
+       display: grid;
+       height: 90vh;
+    width: 100vw;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+    font-size: 2vw;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    grid-template-areas:
+    "header"
+    "contant"
+    "aside";
+    }
+    .footer{
+        display: none;
+    }
+    .contant{
+        grid-area: contant;
+        font-size: 2vw;
+        grid-template-areas: 
+        "box1"
+        "box2"
+        "box3";
+        padding-left: 35%;
+    }
+    .box1{
+        grid-area: box1;
+    }
+    .box2{
+        grid-area: box2;
+    }
+    .box3{
+        grid-area: box3;
+    }
+    .box1,
+    .box2,
+    .box3{
+        display: flex;
+        font-size: 2vw;
+        margin:2px;
+    }
+    .header{
+        grid-area: header;
+    }
+     .aside{
+        grid-area: aside;
+     }
+   .contant_box{
+    display: none;
+   }
+}
+
+
+
+
+
+
